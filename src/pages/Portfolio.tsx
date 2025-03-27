@@ -1,8 +1,8 @@
-import TextContent from "../features/textContent/TextContent";
+import OnePagePortfolio from "../features/portfolio/OnePagePortfolio";
 
 export default function Portfolio () {
     return (
-        <TextContent markdownFile= {"/siteTexts/about.md"}>
-        </TextContent>
+        <OnePagePortfolio>
+        </OnePagePortfolio>
     )
 }

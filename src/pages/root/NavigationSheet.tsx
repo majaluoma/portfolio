@@ -20,7 +20,7 @@ export default function NavigationSheet({
           return (
             <div
               key={`menuBox_${id}`}
-              className="rounded-sm h-2 w-10 hover:bg-inherit"
+              className="rounded-sm h-1 w-7 hover:bg-inherit"
             ></div>
           );
         })}
@@ -31,7 +31,7 @@ export default function NavigationSheet({
     <Sheet>
       <div className="fixed bg-transparent w-screen flex justify-end z-50">
         <SheetTrigger
-          className="fixed bg-none sm:top-6 md:top-7 lg:top-8 top-5 mr-8"
+          className="fixed bg-none top-2 mr-8"
           asChild
         >
           {menuIcon()}
@@ -40,7 +40,7 @@ export default function NavigationSheet({
       <SheetContent className="pl-0 pr-0">
         <SheetHeader className="flex flex-col">
           <SheetTitle className="text-xl mb-8 ml-4">
-            todistusvalinta.fi
+            majaluoma.fi
           </SheetTitle>
           <div className="flex flex-col">
             {titles.map((title) => {

@@ -2,9 +2,9 @@
  */
 export default function Header() {
   return (
-    <div className="fixed top-0 z-40 bg-primary w-screen flex justify-center lg:p-5 md:p-4 p-3 shadow-sm shadow-secondary overflow-hidden will-change-scroll:w-10">
+    <div className="bg-primary shadow-secondary will-change-scroll:w-10 fixed top-0 z-40 flex w-screen justify-center overflow-hidden p-2 shadow-sm">
       <a href="/">
-        <h1 className="text-center text-xl md:text-3xl md:px-8 sm:text-2xl sm:px-7 bg-secondary px-6 py-2 text-white w-min rounded-full">
+        <h1 className="bg-secondary w-min rounded-full px-3 py-0 text-center text-sm text-white">
           majaluoma.fi
         </h1>
       </a>
