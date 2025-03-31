@@ -14,14 +14,6 @@ export default function HistoryTree({
   const nodeRef = React.createRef<HTMLDivElement>();
   const [thisNode, setThisNode] = useState<HTMLDivElement | null>(null);
 
-  const positionYToParent = (thisNode : HTMLDivElement | null) => {
-    if (!parent || !thisNode) {
-      return 0;
-    }
-    console.log("MORONST")
-    return parent.offsetTop - thisNode.offsetTop;
-  };
-
   useEffect(
     function drawLines() {
       if (nodeRef.current) {
