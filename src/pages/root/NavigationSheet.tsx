@@ -15,13 +15,10 @@ export default function NavigationSheet({
 }: Readonly<NavigationSheetProps>) {
   const menuIcon = () => {
     return (
-      <div className="flex flex-col justify-center align-middle gap-1 *:bg-secondary *:hover:bg-secondary-foreground cursor-pointer">
+      <div className="*:bg-secondary hover:*:bg-secondary-foreground flex cursor-pointer flex-col justify-center gap-1.5 align-middle">
         {[0, 1, 2].map((id) => {
           return (
-            <div
-              key={`menuBox_${id}`}
-              className="rounded-sm h-1 w-7 hover:bg-inherit"
-            ></div>
+            <div key={`menuBox_${id}`} className="h-1.5 w-9 rounded-sm"></div>
           );
         })}
       </div>
@@ -29,24 +26,19 @@ export default function NavigationSheet({
   };
   return (
     <Sheet>
-      <div className="fixed bg-transparent w-screen flex justify-end z-50">
-        <SheetTrigger
-          className="fixed bg-none top-2 mr-8"
-          asChild
-        >
+      <div className="fixed z-50 flex w-screen justify-end bg-transparent">
+        <SheetTrigger className="fixed top-3 mr-8 bg-none" asChild>
           {menuIcon()}
         </SheetTrigger>
       </div>
-      <SheetContent className="pl-0 pr-0">
+      <SheetContent className="pr-0 pl-0">
         <SheetHeader className="flex flex-col">
-          <SheetTitle className="text-xl mb-8 ml-4">
-            majaluoma.fi
-          </SheetTitle>
+          <SheetTitle className="mb-8 ml-4 text-xl">majaluoma.fi</SheetTitle>
           <div className="flex flex-col">
             {titles.map((title) => {
               return (
                 <a
-                  className="w-full text-lg hover:bg-card pt-4 pb-4"
+                  className="hover:bg-card w-full pt-4 pb-4 text-lg"
                   key={`title_${title.title}`}
                   href={title.path}
                 >

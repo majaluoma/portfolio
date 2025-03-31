@@ -3,7 +3,6 @@ import Footer from './Footer';
 import NavigationSheet from './NavigationSheet';
 import Header from './Header';
 import { RootProps } from './types';
-
 /**
  * Root component includes all other components.
  * It shows only the component that user have navigated to.
@@ -15,7 +14,7 @@ export default function Layout({ titles }: Readonly<RootProps>) {
     <div className="bg-background flex flex-col justify-center items-center gap-10 h-max overflow-x-hidden align-top pt-16">
       <NavigationSheet titles={titles} />
       <Header />
-      <div className="flex flex-col bg-background w-screen justify-center items-center align-top overflow-x-visible">
+      <div className="flex flex-col bg-background w-screen justify-center items-center align-top overflow-x-visible max-w-screen">
         <Outlet />
       </div>
       <Footer />

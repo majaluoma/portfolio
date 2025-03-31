@@ -27,7 +27,9 @@ export default function ProjectCard({ project }: Readonly<ProjectCardProps>) {
   };
 
   const handleButtonClick = () => {
-    window.open(project.url);
+    if (isOpen) {
+      window.open(project.url);
+    }
   };
 
   return (
@@ -36,8 +38,8 @@ export default function ProjectCard({ project }: Readonly<ProjectCardProps>) {
       onClick={handleCardClick}
     >
       <CardTitle
-        className={`absolute top-3/7 left-2/7 z-10 p-3 text-2xl text-white transition-all duration-500 ${
-          isOpen ? 'top-4 left-4' : ''
+        className={`absolute top-3/7 left-1/7 z-10 p-3 text-2xl text-white transition-all duration-500 ${
+          isOpen ? 'top-4 left-4' : 'md:left-2/7'
         }`}
       >
         <Button
@@ -53,20 +55,24 @@ export default function ProjectCard({ project }: Readonly<ProjectCardProps>) {
         alt={project.name + 'main'}
         className={`h-full w-full object-cover ${isOpen ? 'brightness-50' : 'brightness-75 hover:brightness-100'}`}
       />
-      {isOpen && <CardContent className={`absolute top-3/7 self-center mx-12 flex flex-col`}>
-        <CardDescription className={` text-white`}>
-          {project.description}
-        </CardDescription>
-        <CardAction className={`flex flex-row align-center justify-center w-full mt-5`}>
-          {project.badges.map((badge, index) => {
-            return (
-              <div key={`${badge.badge}_${index}`}>
-                {badge.renderElement}
-              </div>
-            );
-          })}
-        </CardAction>
-      </CardContent>}
+      {isOpen && (
+        <CardContent
+          className={`absolute top-3/7 mx-12 flex flex-col self-center`}
+        >
+          <CardDescription className={`text-white`}>
+            {project.description}
+          </CardDescription>
+          <CardAction
+            className={`align-center mt-5 flex w-full flex-row justify-center`}
+          >
+            {project.badges.map((badge, index) => {
+              return (
+                <div key={`${badge.badge}_${index}`}>{badge.renderElement}</div>
+              );
+            })}
+          </CardAction>
+        </CardContent>
+      )}
     </Card>
   );
 }
