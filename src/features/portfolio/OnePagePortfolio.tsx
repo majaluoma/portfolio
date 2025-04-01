@@ -2,64 +2,74 @@ import FadingPictureBackground from './fadingPictureBackground/fadingPictureBack
 import profileImage1 from '@/assets/profileImage1.jpeg';
 import ProjectCarousel from './projectCarousel/ProjectCarousel';
 import BlockView from '../../components/customUi/BlockView';
-import { HistoryBranch } from './historyTree/types';
+import ResumeTable from './workExperience.tsx/ResumeTable';
 
-import uefIcon from '@/assets/history/uef.jpg';
-import ohjaamoIcon from '@/assets/history/ohjaamo.png';
-import nurmijarviIcon from '@/assets/history/nurmijarvi.png';
-import tikkurilanLukioIcon from '@/assets/history/tikkurilanLukio.jpeg';
-import haagaHeliaIcon from '@/assets/history/haagaHelia.jpg';
-import codingIcon from '@/assets/history/coding.jpeg';
-import HistoryTree from './historyTree/HistoryTree';
-
-const historyTree: HistoryBranch = {
-  name: 'University',
-  icon: uefIcon,
-  description: 'Completed university studies in education and ICT.',
-  branches: [
-    {
-      name: 'Career Counselor',
-      icon: ohjaamoIcon,
-      description:
-        'Started a career as a career counselor, helping individuals navigate their professional paths.',
-      branches: [
-        {
-          name: 'Public Sector',
-          icon: nurmijarviIcon,
-          description:
-            'Worked in the public sector, providing career guidance to students and job seekers.',
-          branches: [
-            {
-              name: 'Public Sector',
-              icon: tikkurilanLukioIcon,
-              description:
-                'Worked in the public sector, providing career guidance to students and job seekers.',
-              branches: [],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: 'ICT Entrepreneur',
-      icon: codingIcon,
-      description:
-        'Started an ICT business focusing on software development and consulting.',
-      branches: [
-        {
-          name: 'Web Development',
-          icon: haagaHeliaIcon,
-          description: 'Built websites and web applications for clients.',
-          branches: [],
-        },
-      ],
-    },
-  ],
-};
+const experienceBranches = [
+  {
+    title: "Frontend Development",
+    description: "Experience in building user interfaces and web applications.",
+    experience: [
+      {
+        name: "React Developer",
+        icon: "react-icon.png",
+        decription: "Developed dynamic web applications using React.",
+        startDate: new Date("2020-01-01"),
+        endDate: new Date("2022-06-30"),
+      },
+      {
+        name: "Vue.js Developer",
+        icon: "vue-icon.png",
+        decription: "Built reusable components and optimized performance.",
+        startDate: new Date("2018-05-01"),
+        endDate: new Date("2019-12-31"),
+      },
+    ],
+  },
+  {
+    title: "Backend Development",
+    description: "Experience in server-side programming and database management.",
+    experience: [
+      {
+        name: "Node.js Developer",
+        icon: "node-icon.png",
+        decription: "Created RESTful APIs and managed server-side logic.",
+        startDate: new Date("2019-01-01"),
+        endDate: new Date("2021-12-31"),
+      },
+      {
+        name: "Django Developer",
+        icon: "django-icon.png",
+        decription: "Developed backend systems and integrated databases.",
+        startDate: new Date("2017-03-01"),
+        endDate: undefined, // Currently working
+      },
+    ],
+  },
+  {
+    title: "DevOps",
+    description: "Experience in CI/CD pipelines and cloud infrastructure.",
+    experience: [
+      {
+        name: "AWS Engineer",
+        icon: "aws-icon.png",
+        decription: "Managed cloud infrastructure and deployment pipelines.",
+        startDate: new Date("2021-07-01"),
+        endDate: undefined, // Currently working
+      },
+      {
+        name: "Docker Specialist",
+        icon: "docker-icon.png",
+        decription: "Containerized applications and optimized workflows.",
+        startDate: new Date("2020-03-01"),
+        endDate: new Date("2021-06-30"),
+      },
+    ],
+  },
+];
 
 export default function OnePagePortfolio() {
   return (
-    <div className="relative bottom-8 max-w-screen">
+    <div className="relative bottom-8 flex max-w-screen flex-col gap-40">
       <FadingPictureBackground />
       <BlockView variant="white">
         <div className="z-10 flex items-center">
@@ -77,13 +87,19 @@ export default function OnePagePortfolio() {
         </div>
       </BlockView>
 
-      <div className="flex flex-col items-center justify-center">
-        <h2 className="text-4xl">Historia</h2>
-        <HistoryTree branch={historyTree} />
-      </div>
+      <BlockView>
+        <div className="mb-5 flex justify-center">
+          <h1 className="self-center text-4xl font-bold">Resume</h1>
+        </div>
+        <div className="w-full min-w-full">
+          <ResumeTable experienceBranches={experienceBranches}/>
+        </div>
+      </BlockView>
 
       <BlockView>
-        <h2 className="mb-2 text-4xl">Projekteja</h2>
+        <div className="mb-5 flex justify-center">
+          <h2 className="self-center text-4xl font-bold">Projects</h2>
+        </div>
         <ProjectCarousel />
       </BlockView>
     </div>

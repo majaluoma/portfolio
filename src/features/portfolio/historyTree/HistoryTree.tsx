@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { HistoryBranch } from './types';
-import HistoryNode from './HistoryNode';
+import HistoryIcon from '../workExperience.tsx/HistoryNode';
 
 type HistoryBranchIteratedProps = {
   branch: HistoryBranch;
@@ -24,9 +24,9 @@ export default function HistoryTree({
   );
 
   return (
-    <div className="flex-coil flex items-center gap-20">
+    <div className="flex-coil flex min-w-full w-full justify-center items-center gap-20">
       <div ref={nodeRef} className="relative z-10">
-        <HistoryNode node={branch} />
+        <HistoryIcon node={branch} />
       </div>
       {parent && thisNode && (
         <svg
@@ -71,3 +71,51 @@ export default function HistoryTree({
     </div>
   );
 }
+
+
+
+
+const historyTree: HistoryBranch = {
+  name: 'University',
+  icon: "uez",
+  description: 'Completed university studies in education and ICT.',
+  branches: [
+    {
+      name: 'Career Counselor',
+      icon: "ohjaamo",
+      description:
+        'Started a career as a career counselor, helping individuals navigate their professional paths.',
+      branches: [
+        {
+          name: 'Public Sector',
+          icon: "nurmijarvi",
+          description:
+            'Worked in the public sector, providing career guidance to students and job seekers.',
+          branches: [
+            {
+              name: 'Public Sector',
+              icon: "vantaa",
+              description:
+                'Worked in the public sector, providing career guidance to students and job seekers.',
+              branches: [],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'ICT Entrepreneur',
+      icon: "coding",
+      description:
+        'Started an ICT business focusing on software development and consulting.',
+      branches: [
+        {
+          name: 'Web Development',
+          icon: "haagaHelia",
+          description: 'Built websites and web applications for clients.',
+          branches: [],
+        },
+      ],
+    },
+  ],
+};
