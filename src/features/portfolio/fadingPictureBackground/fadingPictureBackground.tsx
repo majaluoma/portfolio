@@ -8,7 +8,7 @@ export default function FadingPictureBackground() {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const maxScroll = window.innerHeight - 170; // Adjust based on how quickly you want the fade
-      const newOpacity = Math.max(1 - scrollY / maxScroll,0.1); // Fade out as you scroll
+      const newOpacity = Math.max(1 - scrollY / maxScroll, 0.1); // Fade out as you scroll
       setOpacity(newOpacity);
     };
 
