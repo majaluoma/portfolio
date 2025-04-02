@@ -26,7 +26,7 @@ export default function BlockView({
 
   return (
     <div
-      className={`relative z-1 w-screen ${variantClasses(variant)} my-12 flex items-center justify-center p-8 ${className}`}
+      className={`relative z-1 w-screen ${variantClasses(variant)} my-12 flex items-center justify-center p-8 ${className} py-20`}
     >
       <div
         className={`w-[28rem] items-center justify-center sm:w-[26rem] md:w-[40rem] lg:w-[59rem]`}

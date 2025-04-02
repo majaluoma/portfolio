@@ -63,7 +63,7 @@ export default function ProjectCard({ project }: Readonly<ProjectCardProps>) {
             {project.description}
           </CardDescription>
           <CardAction
-            className={`align-center mt-5 flex w-full flex-row justify-center`}
+            className={`align-center mt-5 flex w-full flex-row justify-center gap-2`}
           >
             {project.badges.map((badge, index) => {
               return (

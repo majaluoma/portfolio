@@ -28,7 +28,7 @@ export default function ExperienceCard({
           </div>
           <div className="space-y-1">
             <h4 className="text-sm font-semibold">{experience.name}</h4>
-            <p className="text-sm">{experience.decription}</p>
+            <p className="text-sm">{experience.description}</p>
             <div className="flex items-center pt-2">
               <CalendarIcon className="mr-2 h-4 w-4 opacity-70" />{' '}
               <span className="text-muted-foreground text-xs">

@@ -5,7 +5,7 @@ export type Experience = {
   name: string;
   employer: string;
   icon: string;
-  decription: string;
+  description: string;
   startDate: Date;
   endDate?: Date;
 };

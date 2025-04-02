@@ -13,7 +13,7 @@ type SkillBadgeProps = {
 function SkillBadge({ skill }: Readonly<SkillBadgeProps>) {
   return (
     <HoverInfo text={skill.description}>
-      <div className="relative size-12 rounded-full hover:brightness-125 hover:shadow-md shadow-black cursor-default">
+      <div className="relative size-12 rounded-full hover:brightness-125 hover:shadow-md shadow-black cursor-default bg-card">
         <img
           className="absolute h-full w-full rounded-full object-cover"
           src={skill.icon}
@@ -29,7 +29,7 @@ export function ReactBadge() {
     <SkillBadge
       skill={{
         name: 'React',
-        icon: 'https://reactjs.org/logo-og.png',
+        icon: 'https://images.seeklogo.com/logo-png/50/3/react-logo-png_seeklogo-507247.png?v=1957819856616202896',
         description:
           'React is a JavaScript library for building user interfaces.',
       }}
@@ -68,7 +68,7 @@ export function NodejsBadge() {
     <SkillBadge
       skill={{
         name: 'Node.js',
-        icon: 'https://nodejs.org/static/images/logo.svg',
+        icon: 'https://logodix.com/logo/1764875.png',
         description:
           "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
       }}
@@ -107,7 +107,7 @@ export function CPanelBadge() {
     <SkillBadge
       skill={{
         name: 'cPanel',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/CPanel_logo.svg',
+        icon: 'https://img2.gratispng.com/20180920/rp/kisspng-logo-cpanel-brand-vector-graphics-computer-icons-dec-3-th-2-6-mojoglob-1713938352612.webp',
         description:
           'cPanel is a web hosting control panel software that provides a graphical interface for managing websites.',
       }}
@@ -120,7 +120,7 @@ export function WordPressBadge() {
     <SkillBadge
       skill={{
         name: 'WordPress',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/2/20/WordPress_logo.svg',
+        icon: 'https://pngimg.com/uploads/wordpress/wordpress_PNG28.png',
         description:
           'WordPress is a free and open-source content management system for building websites and blogs.',
       }}
@@ -159,7 +159,7 @@ export function GitHubActionsBadge() {
     <SkillBadge
       skill={{
         name: 'GitHub Actions',
-        icon: 'https://avatars.githubusercontent.com/u/44036562?s=200&v=4',
+        icon: 'https://img.stackreaction.com/apps/logos/github_192.png',
         description:
           'GitHub Actions is a CI/CD platform that allows you to automate your build, test, and deployment pipeline.',
       }}
@@ -172,9 +172,58 @@ export function AWSBadge() {
     <SkillBadge
       skill={{
         name: 'Amazon Web services',
-        icon: 'https://logospng.org/wp-content/uploads/amazon-web-services.png',
+        icon: 'https://www.technix.in/wp-content/uploads/2013/08/aws.png',
         description:
           'Amazon Web Services is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs.',
+      }}
+    />
+  );
+}
+
+
+export function JavaBadge() {
+  return (
+    <SkillBadge
+      skill={{
+        name: 'Java',
+        icon: 'https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg',
+        description: 'Java is a high-level, class-based, object-oriented programming language.',
+      }}
+    />
+  );
+}
+
+export function SpringBootBadge() {
+  return (
+    <SkillBadge
+      skill={{
+        name: 'Spring Boot',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg',
+        description: 'Spring Boot is an open-source Java framework used to create microservices.',
+      }}
+    />
+  );
+}
+
+export function PostgresBadge() {
+  return (
+    <SkillBadge
+      skill={{
+        name: 'PostgreSQL',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg',
+        description: 'PostgreSQL is a powerful, open-source relational database management system.',
+      }}
+    />
+  );
+}
+
+export function ApacheBadge() {
+  return (
+    <SkillBadge
+      skill={{
+        name: 'Apache',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Apache_HTTP_server_logo_%282016%29.svg',
+        description: 'Apache HTTP Server is a widely used open-source web server software.',
       }}
     />
   );
