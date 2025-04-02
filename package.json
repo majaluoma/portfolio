@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "buildForProduction": "./production.sh && tsc -b && vite build --mode production",
+    "buildForTestServer": "./development.sh && tsc -b && vite build --mode testserver",
     "lint": "eslint .",
     "preview": "vite preview"
   },
