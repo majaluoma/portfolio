@@ -28,10 +28,10 @@ export default function FadingPictureBackground() {
       />
       <div className="relative top-0 z-10 flex flex-row justify-between md:text-xl sm:text-lg ml-12 md:ml-16 lg:ml-40">
         <div className="lg:ml-12 md:ml-12 sm:ml-3 ml-2 flex h-screen flex-col flex-wrap justify-between gap-10 overflow-visible min-w-0">
-          <h1 className="mt-20 text-wrap text-4xl font-bold">
-            Software and Webdevelopment from Finland
+          <h1 className="mt-20 text-wrap text-6xl font-bold font-headline">
+            Software and web development from Finland <br /> <br />
           </h1>
-          <div className="text-card mb-40 flex flex-col gap-2 font-bold text-2xl">
+          <div className="text-card mb-40 flex flex-col gap-2 font-bold text-2xl font-headline">
             <p>Business administration, Information technology </p>
             <p>Master in education, Career counselling</p>
           </div>

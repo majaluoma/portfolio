@@ -36,7 +36,7 @@ export default function ResumeTable({
             </div>
             <div>
               <Separator className="my-4" />
-              <div className="flex h-5 items-center space-x-4 text-sm">
+              <div className="flex max-h-36 items-center space-x-4 text-sm overflow-scroll">
                 {branch.experience.map(
                   function mapExperience(experience, index) {
                     return (
@@ -44,7 +44,7 @@ export default function ResumeTable({
                         className="flex flex-row"
                         key={`${experience.name}_${index}_experience`}
                       >
-                        <div className="flex flex-col justify-center items-center">
+                        <div className="flex flex-col justify-center items-center gap-1">
                           <ExperienceCard experience={experience} />
                           <p>
                             {experience.startDate.getFullYear()}{' '}

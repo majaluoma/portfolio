@@ -11,9 +11,9 @@ export default function OnePagePortfolio() {
     <div className="relative bottom-8 flex max-w-screen flex-col gap-40">
       <FadingPictureBackground />
       <BlockView variant="white">
-        <div className="z-10 flex items-center">
-          <div>
-            <h2 className="mb-2 text-4xl">Olli Majaluoma</h2>
+        <div className="z-10 flex items-center flex-wrap gap-8 justify-center">
+          <div className='w-70 lg:w-80'>
+            <h2 className="mb-2 text-4xl font-headline">Olli Majaluoma</h2>
             <p>
               I am a web developer with specialized expertise in the Finnish
               education system and career counseling. My programming interests
@@ -32,7 +32,7 @@ export default function OnePagePortfolio() {
       <ChapterSeparator />
       <BlockView variant="white">
         <div className="mb-5 flex justify-center">
-          <h1 className="self-center text-4xl font-bold">Resume</h1>
+          <h2 className="self-center text-4xl font-bold font-headline">Resume</h2>
         </div>
         <div className="w-full min-w-full">
           <ResumeTable experienceBranches={experienceBranches} />
@@ -41,7 +41,7 @@ export default function OnePagePortfolio() {
       <ChapterSeparator />
       <BlockView>
         <div className="mb-5 flex justify-center">
-          <h2 className="self-center text-4xl font-bold">Projects</h2>
+          <h2 className="self-center text-4xl font-bold font-headline">Projects</h2>
         </div>
         <ProjectCarousel />
       </BlockView>
