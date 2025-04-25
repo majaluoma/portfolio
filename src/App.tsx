@@ -17,11 +17,11 @@ function App() {
       children: [
         {
           path: '/',
-          element: <Blog />,
+          element: <Portfolio />,
         },
         {
-          path: '/portfolio',
-          element: <Portfolio />,
+          path: '/blog',
+          element: <Blog />,
         },
         {
           path: '/contact',

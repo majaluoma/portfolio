@@ -17,23 +17,23 @@ export default function FadingPictureBackground() {
   }, []);
 
   return (
-    <div
-      className="z-0 h-screen w-full overflow-hidden transition-opacity duration-500 ease-out mb-50"
-    >
+    <div className="z-0 mb-50 h-screen w-full overflow-hidden transition-opacity duration-500 ease-out">
       <img
         className="fixed left-0 h-screen w-full object-cover"
         src={natureImage1}
         alt="nature"
         style={{ opacity: opacity }}
       />
-      <div className="relative top-0 z-10 flex flex-row justify-between md:text-xl sm:text-lg ml-12 md:ml-16 lg:ml-40">
-        <div className="lg:ml-12 md:ml-12 sm:ml-3 ml-2 flex h-screen flex-col flex-wrap justify-between gap-10 overflow-visible min-w-0">
-          <h1 className="mt-20 text-wrap text-6xl font-bold font-headline">
-            Software and web development from Finland <br /> <br />
-          </h1>
-          <div className="text-card mb-40 flex flex-col gap-2 font-bold text-2xl font-headline">
-            <p>Business administration, Information technology </p>
-            <p>Master in education, Career counselling</p>
+      <div className="relative top-0 z-10 ml-12 flex flex-row justify-between sm:text-lg md:ml-16 md:text-xl lg:ml-40">
+        <div className="ml-2 flex h-screen min-w-0 flex-col flex-wrap justify-between gap-10 overflow-visible sm:ml-3 md:ml-12 lg:ml-12">
+          <div className="mt-20">
+            <h1 className="font-headline text-6xl font-bold">
+              Software and web development from Finland <br /> <br />
+              <div className="font-headline text-xl font-bold">
+                <p>Business administration, Information technology </p>
+                <p>Master in education, Career counselling</p>
+              </div>
+            </h1>
           </div>
         </div>
       </div>

@@ -3,15 +3,7 @@
  */
 export const titles = [
   {
-    path: '/portfolio',
+    path: '/',
     title: 'CV',
-  },
-  {
-    path: '/contact',
-    title: 'Yhteys',
-  },
-  {
-    path: '/blog',
-    title: 'Blogi',
   },
 ];

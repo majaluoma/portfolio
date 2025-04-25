@@ -5,21 +5,23 @@ import BlockView from '../../components/customUi/BlockView';
 import ResumeTable from './workExperience.tsx/ResumeTable';
 import ChapterSeparator from './ChapterSeparator/ChapterSeparator';
 import { experienceBranches } from '@/data/experienceBranches';
+import PageEnd from './ChapterSeparator/PageEnd';
+import SocialLinks from './SocialLinks/SocialLinks';
 
 export default function OnePagePortfolio() {
   return (
     <div className="relative bottom-8 flex max-w-screen flex-col gap-40">
       <FadingPictureBackground />
       <BlockView variant="white">
-        <div className="z-10 flex items-center flex-wrap gap-8 justify-center">
-          <div className='w-70 lg:w-80'>
-            <h2 className="mb-2 text-4xl font-headline">Olli Majaluoma</h2>
+        <div className="z-10 flex flex-wrap items-center justify-center gap-8">
+          <div className="w-70 lg:w-80">
+            <h2 className="font-headline mb-2 text-4xl">Olli Majaluoma</h2>
             <p>
               I am a web developer with specialized expertise in the Finnish
               education system and career counseling. My programming interests
               include databases, infrastructure, and server-side processing. To
               me, learning is a lifelong journey that brings joy and
-              fulfillment. <br /> <br /> I am also a career counselor passionate
+              fulfillment. <br /> <br /> I have been working in ICT sector for 5 years as a part-time entrepenour and managed to build profitable and popular services. <br /> <br /> I am also a career counselor passionate
               about individuals' life paths and career decision-making skills.
               My work is rooted in humanistic values and diverse experiences
               across different contexts. At the heart of my approach is helping
@@ -32,7 +34,9 @@ export default function OnePagePortfolio() {
       <ChapterSeparator />
       <BlockView variant="white">
         <div className="mb-5 flex justify-center">
-          <h2 className="self-center text-4xl font-bold font-headline">Resume</h2>
+          <h2 className="font-headline self-center text-4xl font-bold">
+            Resume
+          </h2>
         </div>
         <div className="w-full min-w-full">
           <ResumeTable experienceBranches={experienceBranches} />
@@ -41,7 +45,9 @@ export default function OnePagePortfolio() {
       <ChapterSeparator />
       <BlockView>
         <div className="mb-5 flex justify-center">
-          <h2 className="self-center text-4xl font-bold font-headline">Projects</h2>
+          <h2 className="font-headline self-center text-4xl font-bold">
+            Projects
+          </h2>
         </div>
         <ProjectCarousel />
       </BlockView>
@@ -51,7 +57,9 @@ export default function OnePagePortfolio() {
           I'm looking for a new project or trainee position starting from august
           2025. 👉 olli@majaluoma.fi
         </p>
+        <SocialLinks/>
       </BlockView>
+      <PageEnd />
     </div>
   );
 }
