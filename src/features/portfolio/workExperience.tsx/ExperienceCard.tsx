@@ -19,7 +19,7 @@ export default function ExperienceCard({
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Button variant="link" className='p-1 max-w-56 text-wrap break-words whitespace-normal h-max'>{experience.name}</Button>
+        <Button variant="link" className='p-1 max-w-56 text-wrap break-words whitespace-normal h-max hover:cursor-pointer underline'>{experience.name}</Button>
       </HoverCardTrigger>
       <HoverCardContent className="w-90">
         <div className="flex justify-between space-x-4">

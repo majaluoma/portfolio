@@ -1,5 +1,5 @@
 import HoverInfo from './HoverInfo';
-
+import humanIcon from '@/assets/badges/human.jpeg';
 type Skill = {
   name: string;
   icon: string;
@@ -224,6 +224,18 @@ export function ApacheBadge() {
         name: 'Apache',
         icon: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Apache_HTTP_server_logo_%282016%29.svg',
         description: 'Apache HTTP Server is a widely used open-source web server software.',
+      }}
+    />
+  );
+}
+
+export function HumanBadge() {
+  return (
+    <SkillBadge
+      skill={{
+        name: 'Human',
+        icon: humanIcon,
+        description: 'Complicated biotechnical system with a lot of bugs.',
       }}
     />
   );

@@ -38,8 +38,8 @@ export default function ProjectCard({ project }: Readonly<ProjectCardProps>) {
       onClick={handleCardClick}
     >
       <CardTitle
-        className={`absolute top-3/7 left-1/7 z-10 p-3 text-2xl text-white transition-all duration-500 ${
-          isOpen ? 'top-4 left-4' : 'md:left-2/7'
+        className={`absolute top-3/7 z-10 flex w-full justify-center p-3 text-2xl text-white transition-all duration-500 ${
+          isOpen ? 'top-4' : ''
         }`}
       >
         <Button
