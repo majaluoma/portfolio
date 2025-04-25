@@ -10,8 +10,6 @@ import Autoplay from 'embla-carousel-autoplay';
 import { projects } from '@/data/projects';
 
 export default function ProjectCarousel() {
-  
-
   return (
     <Carousel
       opts={{
@@ -37,8 +35,10 @@ export default function ProjectCarousel() {
           );
         })}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <div className="hidden lg-block sm:block md:block">
+        <CarouselPrevious />
+        <CarouselNext />
+      </div>
     </Carousel>
   );
 }

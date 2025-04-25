@@ -24,12 +24,12 @@ export default function FadingPictureBackground() {
         alt="nature"
         style={{ opacity: opacity }}
       />
-      <div className="relative top-0 z-10 flex flex-row justify-between sm:text-lg m-4 sm:ml-8 md:ml-16 lg:ml-30 md:text-xl">
+      <div className="relative top-0 z-10 m-4 flex flex-row justify-between sm:ml-8 sm:text-lg md:ml-16 md:text-xl lg:ml-30">
         <div className="ml-2 flex h-screen min-w-0 flex-col flex-wrap justify-between gap-10 overflow-visible sm:ml-3 md:ml-12 lg:ml-12">
           <div className="mt-20">
             <h1 className="font-headline text-6xl font-bold">
               Software and web development from Finland <br /> <br />
-              <div className="font-headline text-xl font-bold bg-[#eaede9] md:bg-none lg:bg-none w-fit">
+              <div className="font-headline text-card w-fit rounded-3xl p-2 text-xl font-bold shadow-2xl backdrop-brightness-75 md:bg-none lg:bg-none">
                 <p>Business administration, Information technology </p>
                 <p>Master in education, Career counselling</p>
               </div>
