@@ -7,7 +7,7 @@ import ChapterSeparator from './ChapterSeparator/ChapterSeparator';
 import { experienceBranches } from '@/data/experienceBranches';
 import PageEnd from './ChapterSeparator/PageEnd';
 import SocialLinks from './SocialLinks/SocialLinks';
-import { HumanBadge, MysqlBadge, NodejsBadge, ReactBadge } from '@/components/customUi/SkillBadges';
+import KeyCompetencies from './keyCompetencies/KeyCompetencies';
 
 export default function OnePagePortfolio() {
   return (
@@ -36,58 +36,7 @@ export default function OnePagePortfolio() {
       </BlockView>
       <ChapterSeparator />
       <BlockView variant="default">
-        <div className="mb-6 flex w-full items-center justify-center">
-          <h2 className="font-headline mb-2 text-4xl">Key Competencies</h2>
-        </div>
-        <div className="z-10 flex flex-wrap items-center justify-center gap-8">
-          <div className="w-70 lg:w-80">
-            <div className="mr-6 flex flex-row justify-between gap-2">
-              <h2 className="font-headline mb-2 text-2xl">React</h2>{' '}
-              <ReactBadge />
-            </div>
-
-            <p>
-              I have extensive experience in building dynamic web applications
-              using React. I create user-friendly interfaces in cooperation with
-              my users and try to follow guidelines for functional programming.
-            </p>
-          </div>
-          <div className="w-70 lg:w-80">
-          <div className='flex flex-row justify-between gap-2 mr-6'>
-            <h2 className="font-headline mb-2 text-2xl">Node.js</h2>{' '}
-            <NodejsBadge />
-          </div>
-            <p>
-              I specialize in server-side development using Node.js. My
-              expertise includes managing server-side logic, ensuring security,
-              and integrating with databases and API for full-stack
-              applications.
-            </p>
-          </div>
-          <div className="w-70 lg:w-80">
-          <div className='flex flex-row justify-between gap-2 mr-6'>
-            <h2 className="font-headline mb-2 text-2xl">MySQL</h2>{' '}
-            <MysqlBadge />
-          </div>
-            <p>
-              I have hands-on experience in designing and managing relational
-              databases using MySQL. I write efficient queries, optimizing
-              database performance, and ensure sustainable and robust
-              development databases that suit for different situations.
-            </p>
-          </div>
-          <div className="w-70 lg:w-80">
-          <div className='flex flex-row justify-between gap-2 mr-6'>
-            <h2 className="font-headline mb-2 text-2xl">Humans</h2>
-            <HumanBadge/>
-          </div>
-            <p>
-              As a career counselor, I excel in understanding human behavior and
-              guiding individuals toward better decisions. My communication
-              skills are my strength also as a webdeveloper.
-            </p>
-          </div>
-        </div>
+        <KeyCompetencies />
       </BlockView>
       <ChapterSeparator />
       <BlockView variant="white">
