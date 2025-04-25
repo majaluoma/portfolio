@@ -28,7 +28,7 @@ export default function OnePagePortfolio() {
               clients discover solutions within themselves.
             </p>
           </div>
-          <img src={profileImage1} alt="Me" className="ml-20 h-96" />
+          <img src={profileImage1} alt="Me" className="h-96" />
         </div>
       </BlockView>
       <ChapterSeparator />
