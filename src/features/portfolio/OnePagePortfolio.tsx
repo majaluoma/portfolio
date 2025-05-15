@@ -2,10 +2,10 @@ import FadingPictureBackground from './fadingPictureBackground/fadingPictureBack
 import profileImage1 from '@/assets/profileImage1.jpeg';
 import ProjectCarousel from './projectCarousel/ProjectCarousel';
 import BlockView from '../../components/customUi/BlockView';
-import ResumeTable from './workExperience.tsx/ResumeTable';
-import ChapterSeparator from './ChapterSeparator/ChapterSeparator';
+import ResumeTable from './resumeTable/ResumeTable';
+import ChapterSeparator from '../../components/customUi/ChapterSeparator/ChapterSeparator';
 import { experienceBranches } from '@/data/experienceBranches';
-import PageEnd from './ChapterSeparator/PageEnd';
+import PageEnd from '../../components/customUi/ChapterSeparator/PageEnd';
 import SocialLinks from './SocialLinks/SocialLinks';
 import KeyCompetencies from './keyCompetencies/KeyCompetencies';
 

@@ -20,5 +20,9 @@ export default function TextContent({
   }, []);
 
   //Custom styles in markdown.css -file
-  return <Markdown>{text}</Markdown>;
+  return (
+    <div className={'markdown'}>
+      <Markdown>{text}</Markdown>;
+    </div>
+  );
 }
