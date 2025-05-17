@@ -24,8 +24,16 @@ function App() {
           element: <Blog />,
         },
         {
+          path: '/blog/:year',
+          element: <Blog batch/>,
+        },
+        {
           path: '/contact',
           element: <Contact />,
+        },
+        {
+          path: '/blog/:year/:id',
+          element: <Blog single/>,
         },
       ],
     }

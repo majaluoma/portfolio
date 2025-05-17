@@ -1,4 +1,3 @@
-import BlockView from '@/components/customUi/BlockView';
 import TextContent from '../textContent/TextContent';
 import ChapterSeparator from '../../components/customUi/ChapterSeparator/ChapterSeparator';
 
@@ -15,20 +14,22 @@ type BlogPostsProps = {
 
 export default function BlogPosts({ blogposts }: BlogPostsProps) {
   return (
-    <BlockView>
+    <div>
       <div className="flex flex-col">
         {blogposts.map((blogpost) => {
           return (
             <div key={`blogpost_${blogpost.id}`}>
-                <p className='text-gray-600'>{blogpost.date.toLocaleDateString()}</p>
+              <p className="text-gray-600">
+                {blogpost.date.toLocaleDateString()}
+              </p>
               <TextContent
                 markdownFile={`/siteTexts/blogEntries/${blogpost.id}.md`}
               />
-        <ChapterSeparator className='my-15'/>
+              <ChapterSeparator className="my-15" />
             </div>
           );
         })}
       </div>
-    </BlockView>
+    </div>
   );
 }
