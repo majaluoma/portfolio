@@ -1,6 +1,6 @@
 import BlockView from '@/components/customUi/BlockView';
 import { blogData } from '@/data/blogData';
-import BlogNavigation from '@/features/blogPosts/blogNavigation';
+import BlogNavigation from '@/features/blogPosts/BlogNavigation';
 import BlogPosts from '@/features/blogPosts/BlogPosts';
 import LinkList from '@/features/linkList/LinkList';
 import { useEffect, useState } from 'react';
@@ -51,16 +51,14 @@ export default function Blog({ single, batch }: BlockProps) {
             return {
               name: `${blogentry.date.toLocaleDateString()} ${blogentry.title}`,
               url: `http://localhost:5173/blog/${blogentry.date.getFullYear().toString()}/${blogentry.id}`,
-              category: blogentry.date.getFullYear().toString(),
+              categories: [blogentry.date.getFullYear().toString()],
             };
           })}
         />
       </BlockView>
-      <div className="fixed top-50 left-20 z-50">
+      <div className="fixed bottom-1 left-1 md:top-50 md:left-20 z-50">
         <BlogNavigation />
       </div>
-      <p>Sidebar: labels</p>
-      <p>Sidebar: profile</p>
       <p>Sidebar: social links</p>
     </>
   );
