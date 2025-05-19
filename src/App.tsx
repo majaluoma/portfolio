@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 
 import Blog from './pages/Blog';
 import Portfolio from './pages/Portfolio';
+import Test from './pages/Test';
 function App() {
 
   const router = createBrowserRouter([
@@ -34,6 +35,10 @@ function App() {
         {
           path: '/blog/:year/:id',
           element: <Blog single/>,
+        },
+        {
+          path: '/test',
+          element: <Test/>,
         },
       ],
     }
