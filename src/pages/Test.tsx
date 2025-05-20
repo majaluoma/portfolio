@@ -15,26 +15,26 @@ export default function Test() {
     script1.defer = true;
     document.body.appendChild(script1);
 
-    // Second script
-    const script2 = document.createElement('script');
-    script2.src =
-      'https://api.todistusvalinta.fi/public/api/asiakkaat/studentum/scripts.js?v=1.0.0';
-    script2.defer = true;
-    document.body.appendChild(script2);
+    // // Second script
+    // const script2 = document.createElement('script');
+    // script2.src =
+    //   'https://api.todistusvalinta.fi/public/api/asiakkaat/studentum/scripts.js?v=1.0.0';
+    // script2.defer = true;
+    // document.body.appendChild(script2);
 
-    // Add script2 only after script1 has loaded
-    script1.onload = () => {
-      document.body.appendChild(script2);
-    };
+    // // Add script2 only after script1 has loaded
+    // script1.onload = () => {
+    //   document.body.appendChild(script2);
+    // };
 
     document.body.appendChild(script1);
 
     return () => {
       document.head.removeChild(link);
       document.body.removeChild(script1);
-      if (document.body.contains(script2)) {
-        document.body.removeChild(script2);
-      }
+      // if (document.body.contains(script2)) {
+      //   document.body.removeChild(script2);
+      // }
     };
   }, []);
 
