@@ -17,7 +17,7 @@ export default function BlogNavigation() {
   const postsAndLabels = blogData.map((blogentry) => {
     return {
       name: `${blogentry.date.toLocaleDateString()} ${blogentry.title}`,
-      url: `http://localhost:5173/blog/${blogentry.date.getFullYear().toString()}/${blogentry.id}`,
+      url: `/blog/${blogentry.date.getFullYear().toString()}/${blogentry.id}`,
       categories: blogentry.labels,
     };
   });
@@ -25,7 +25,7 @@ export default function BlogNavigation() {
   const postsAndYears = blogData.map((blogentry) => {
     return {
       name: `${blogentry.date.toLocaleDateString()} ${blogentry.title}`,
-      url: `http://localhost:5173/blog/${blogentry.date.getFullYear().toString()}/${blogentry.id}`,
+      url: `/blog/${blogentry.date.getFullYear().toString()}/${blogentry.id}`,
       categories: [blogentry.date.getFullYear().toString()],
     };
   });
