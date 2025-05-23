@@ -1,4 +1,4 @@
-import FadingPictureBackground from './fadingPictureBackground/fadingPictureBackground';
+import PortfolioTitle from './portfoliotitle/PortfolioTitle';
 import profileImage1 from '@/assets/profileImage1.jpeg';
 import ProjectCarousel from './projectCarousel/ProjectCarousel';
 import BlockView from '../../components/customUi/BlockView';
@@ -12,7 +12,7 @@ import KeyCompetencies from './keyCompetencies/KeyCompetencies';
 export default function OnePagePortfolio() {
   return (
     <div className="relative bottom-8 flex max-w-screen flex-col gap-40">
-      <FadingPictureBackground />
+      <PortfolioTitle />
       <BlockView variant="white">
         <div className="z-10 flex flex-wrap items-center justify-center gap-8">
           <div className="w-70 lg:w-80">
