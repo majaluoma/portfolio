@@ -168,6 +168,8 @@ Asus ROG Strix GT15
 -   Network: Gigabit Ethernet, Intel WiFi 6 (802.11ax), Bluetooth 5.0
 -   Operating system: Windows 10 Home 64-bit
 
+The command line tool used was Git Bash, so the commands correspond better to Linux environments.
+
 This document can be copied and modified according to the GNU General Public License (version 2 or later). http://www.gnu.org/licenses/gpl.html
 
 Based on the assignment of the Server Management course: https://terokarvinen.com/palvelinten-hallinta/
