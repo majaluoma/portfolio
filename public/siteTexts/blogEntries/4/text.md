@@ -1,7 +1,5 @@
 ## OpenTTD Daemon - Infrastructure as Code
-The purpose of this project was to produce code that builds an openTTD game server on the target machine using Saltstack. In this report, I go through all the necessary steps. I also wanted to configure the game so that it would work as a marathon game lasting the whole weekend, which could be played alongside other LAN games.
-
-7:45 I started working on the task.
+The purpose of this project was to produce code that builds an openTTD game server on the minion machine using Saltstack. In this report, I go through all the necessary steps.
 
 I created two vagrant virtual machines, **master** and **minion1**, with the following initial scripts:
 
@@ -93,7 +91,7 @@ There it said "OpenTTD needs some additional graphics and sound files to run." I
 I downloaded the graphics directly to the module, as I would need them later with the minion:
 
 ```sh
-$vagrant@master sudo curl -O https://cdn.openttd.org/opengfx-releases/7.1/opengfx-7.1-all.zip'
+$vagrant@master sudo curl -O https://cdn.openttd.org/opengfx-releases/7.1/opengfx-7.1-all.zip
 $vagrant@master sha256sum ./opengfx-7.1-all.zip 
 $vagrant@master tar -xf opengfx-7.1-all.zip -C /tmp/openttdGfx
 # Error: tar: This does not look like a tar archive
@@ -109,10 +107,6 @@ Then I went to read the manual for the graphics set. The tar wasn't needed. `sud
 Well, I put this in a folder (I'll try /opt/ first) and got the following error:
 
 ![alt text](/siteTexts/blogEntries/4/images/image-8.png)
-
-And in the language folder, there is stuff...
-
-![alt text](/siteTexts/blogEntries/4/images/image-9.png)
 
 The problem was that I used the command via an environment variable. When I started the command directly from the folder `./openttd`, it worked. Lucky to realize that.
 
@@ -152,21 +146,13 @@ unzip -q /tmp/opengfx-7.1-all.zip -d /opt/openttd-14.1-linux-generic-amd64/bases
   cmd.run
 ```
 
-I accepted the minion's keys
+I accepted the minion's keys and setupped salt state.
 ```sh
 $vagrant@master sudo salt-key -A
 $vagrant@master sudo salt '*' state.apply openttd
 
 ```
-The connection didn't work, and the same with `sudo salt '*' ping`
-![alt text](/siteTexts/blogEntries/4/images-2/image.png)
-
-
-Let's start over. I destroyed the virtual machines and started them up again. Accepted the keys, tested ping. 11:00 lunch break.
-
 ![alt text](/siteTexts/blogEntries/4/images-2/image-1.png)
-
-11.15 continues
 
 ```sh
 $vagrant@master sudo salt-key -A -y
@@ -186,13 +172,6 @@ graphics checksum:
 game:
 c7648c9aac11daeb7f1bdd7a07346865ae590c07af4a6d02a5ed01fb33eba067
 
-
-I got a really mysterious salt error. I started by removing lines from init.sls and running them one at a time. At the same time, I checked idempotency.
-
-I started running the program one line at a time, and everything went great and idempotently. At some point, I checked on the minion if anything was happening:
-
-![alt text](/siteTexts/blogEntries/4/images-2/image-2.png)
-
 Before running the configuration part, I fixed:
 
 ```sh
@@ -203,43 +182,19 @@ Before running the configuration part, I fixed:
 ```
 ![alt text](/siteTexts/blogEntries/4/images-2/image-3.png)  
 
-Finally, the whole init.sls was ready and working: Before the final idempotency test, I should figure out something for the last run command. It would also be neater to use the service.running state function, but I don't know how to find out the name of the openttd daemon. I read some systemctl manuals and Salt manuals about the service.running function. I couldn't figure out how to approach it. I asked ChatGPT for direction.
+Finally, the whole init.sls was ready and working: Before the final idempotency test, I should figure out something for the last run command. It would also be neater to use the service.running state function, but I don't know how to create openttd daemon. 
 
-![alt text](/siteTexts/blogEntries/4/images-2/image-4.png)
-
-ChatGPT directed me to the command pgrep openttd. With that, I can find the process pid number with `pgrep openttd`. I added this check to the cmd.run command. I also learned from ChatGPT that apparently such processes can also be made into daemons, which could be run with the service.running function. I didn't understand this very deeply, so I decided to use the cdm.run command. (Read more at Linuxize 2024, Salt Project 2024).
+I can find the process pid number with `pgrep openttd`. I added this check to the cmd.run command. I also learned from ChatGPT that apparently such processes can also be made into daemons, which could be run with the service.running function. I didn't understand this very deeply, so I decided to use the cdm.run command. (Read more at Linuxize 2024, Salt Project 2024).
 
 With the above command, I achieved idempotency: 
 ![alt text](/siteTexts/blogEntries/4/images-2/image-5.png)
 
 Finally, I should check that the game server is reachable. The Openttd site said that the following ports should be opened:
 
-3979 UDP
-3979 TCP
+- 3979 UDP
+- 3979 TCP
 
-```sh
-I added these lines:
-ufw:
-  pkg.installed
-ufw.service:
-  service.running
-sudo ufw allow in on wlo1 from 192.168.0.0/24 proto udp to any port 3979:
-  cmd.run:
-    - unless: sudo ufw status verbose | grep 3979/udp
-sudo ufw allow in on wlo1 from 192.168.0.0/24 proto tcp to any port 3979:
-  cmd.run:
-    - unless: sudo ufw status verbose | grep 3979/tcp
-sudo ufw allow in on wlo1 from 192.168.0.0/24 proto udp to any port 3978:
-  cmd.run:
-    - unless: sudo ufw status verbose | grep 3978/udp
-
-```
-![alt text](/siteTexts/blogEntries/4/images-2/image-8.png)
-
-
-I accidentally closed the salt ports and added them to the state (first ran the commands on the minion)
-
-
+I added these lines to state config:
 ```sh
 sudo ufw allow in on wlo1 from 192.168.56.88 proto tcp to any port 4505:
   cmd.run:
@@ -256,8 +211,6 @@ However, the game is not visible:
 
 ![alt text](/siteTexts/blogEntries/4/images-2/image-7.png)  
 
-I remembered that some specific things still needed to be added to the configs, and that was the case. I edited a couple of settings. I edited these and in between killed the openttd server with `sudo kill 4380`
-
 I always tested the connection with these commands:
 ```sh
 $vagrant@minion sudo ufw status verbose
@@ -265,24 +218,7 @@ $host sudo nmap -sU -p 3979 192.168.56.89
 $host telnet 192.168.56.89 3979
 ```
 
-![alt text](/siteTexts/blogEntries/4/images-2/image-9.png)
-
-![alt text](/siteTexts/blogEntries/4/images-2/image-10.png)
-
-I then had big problems getting this to work and did a lot of things I didn't report. I basically tried different opentTTD configurations. I finally noticed that the configuration file wasn't even loaded into the game, as the logs complained that server_name was not defined.
-
-![alt text](/siteTexts/blogEntries/4/images-2/image-11.png)
-
-By searching, I found three different cfg files on the machine. Next, I edited these, but my changes were overwritten.
-
-I tried starting the openttd application with different parameters. I added these to the command:
-
-  -x                  = Never save configuration changes to disk
-  -c config_file      = Use 'config_file' instead of 'openttd.cfg'
-
-As the config file, I used the one I created in the openttd folder and brought from the master machine.
-
-Finally, I noticed that in addition to the config file not opening, the server was only listening on address 127.0.0.1, i.e., localhost.
+I noticed that in addition to the config file not opening, the server was only listening on address 127.0.0.1, i.e., localhost.
 
 Finally, hosting succeeded when I changed the -D argument from localhost --> 192.168.56.89
 
@@ -294,9 +230,6 @@ This is where I stopped working. There are still unfinished things in the projec
 - the configuration file is not used when the program starts.
 - when the configuration file changes, the daemon does not restart.
 - the server does not have mods enabled
-
-At 14:26 I stopped the task, there is no more time to investigate these issues.
-
 
 ## Sources
 Karvinen, Tero 2024a. Server Management - Configuration Management Systems course - 2024 autumn. Source: https://terokarvinen.com/palvelinten-hallinta/ (Read 2024.11.06)  
