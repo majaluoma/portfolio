@@ -6,4 +6,8 @@ export const titles = [
     path: '/',
     title: 'CV',
   },
+   {
+    path: '/blog',
+    title: 'Blog',
+  },
 ];

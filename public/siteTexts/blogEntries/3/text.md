@@ -1,4 +1,4 @@
-# Resting daemons on salt stack infrastructure
+# Testing daemons on salt stack infrastructure
 
 The report was written on 18-20.11.2024.
 
