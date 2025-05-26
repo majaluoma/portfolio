@@ -1,4 +1,4 @@
-## OpenTTD as Infrastructure as Code
+## OpenTTD Daemon - Infrastructure as Code
 The purpose of this project was to produce code that builds an openTTD game server on the target machine using Saltstack. In this report, I go through all the necessary steps. I also wanted to configure the game so that it would work as a marathon game lasting the whole weekend, which could be played alongside other LAN games.
 
 7:45 I started working on the task.

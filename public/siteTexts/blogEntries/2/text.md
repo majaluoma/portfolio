@@ -141,7 +141,8 @@ I started both virtual machines t001 and t002 and tested the network connection 
         $ vagrant ssh t02
         $t002  ping 192.168.88.101
 
-![alt text](/siteTexts/blogEntries/2/image-4.png) ![alt text](/siteTexts/blogEntries/2/image-5.png)
+![alt text](/siteTexts/blogEntries/2/image-4.png) 
+![alt text](/siteTexts/blogEntries/2/image-5.png)
 
 ## d) Establishing the Master-Slave Architecture on the Virtual Machines
 I learned that `vagrant` commands must be run in the project folder even after creating the virtual machines. I assumed that the virtual machines would also be accessible from elsewhere, as is the case with Docker, for example. I first tried to run the `vagrant ssh` command in a different folder:
@@ -182,7 +183,8 @@ And for the minion machine as follows:
         t002 sudo apt-get -y install salt-minion
 
 Finally, I tested that the installations were successful with the `salt-call --version` command:   
-![alt text](/siteTexts/blogEntries/2/image-8.png)  ![alt text](/siteTexts/blogEntries/2/image-9.png)  
+![alt text](/siteTexts/blogEntries/2/image-8.png)  
+![alt text](/siteTexts/blogEntries/2/image-9.png)  
 
 I configured the minion machine to receive commands from the master:
 
