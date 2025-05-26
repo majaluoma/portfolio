@@ -35,17 +35,18 @@ export default function LinkAccordion({
       type="single"
       collapsible
       className={`w-full ${classname}`}
-      defaultValue={`item-${categories[0].category}`}
+      defaultValue={firstOpen ? `item-${categories[0].category}` : ``}
     >
       {categories.map((category) => {
         return (
           <AccordionItem
             key={category.category}
-            value={firstOpen ? `item-${category.category}` : ''}
+            value={`item-${category.category}`}
           >
-            <AccordionTrigger className="px-3">
-              {category.category}
+            <AccordionTrigger className="cursor-pointer px-3">
+              {`${category.category} (${category.links.length})`}
             </AccordionTrigger>
+
             <AccordionContent>
               {category.links.map((link) => {
                 return (

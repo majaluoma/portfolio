@@ -22,7 +22,7 @@ export default function TextContent({
   //Custom styles in markdown.css -file
   return (
     <div className={'markdown prose'}>
-      <Markdown>{text}</Markdown>;
+      <Markdown>{text}</Markdown>
     </div>
   );
 }

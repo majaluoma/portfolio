@@ -11,7 +11,7 @@ type BlockProps = {
   single?: boolean;
   batch?: boolean;
 };
-export default function Blog({ single, batch }: BlockProps) {
+export default function Blog({ single, batch }: Readonly<BlockProps>) {
   const { id, year } = useParams();
   const [blogPosts, setBlogPosts] = useState(blogData);
 
@@ -32,6 +32,7 @@ export default function Blog({ single, batch }: BlockProps) {
       }
     }
   }, [batch, single, id, year]);
+
 
   return (
     <>

@@ -58,15 +58,15 @@ export default function BlogNavigation() {
             </SheetDescription>
           </SheetHeader>
           <Button variant={'link'} className="w-min m-0 pl-0 text-xl" onClick={navigateToBlog}>
-            Recent posts
+            All posts
           </Button>
           <div className="my-6">
             <h2 className='font-extrabold'>Subjects</h2>
-            <LinkAccordion links={postsAndLabels}></LinkAccordion>
+            <LinkAccordion links={postsAndLabels} firstOpen={false}></LinkAccordion>
           </div>
           <div className="my-6">
             <h2 className='font-extrabold'>All posts</h2>
-            <LinkAccordion links={postsAndYears} />
+            <LinkAccordion links={postsAndYears} firstOpen={false}/>
           </div>
           <div className="my-6">
             <SocialLinks />

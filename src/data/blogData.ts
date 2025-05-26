@@ -8,14 +8,14 @@ export const blogData = [
   },
   {
     id:2,
-    title: 'Testing Salt Commands Locally on Virtual Machines',
+    title: 'Infrastructure as a code using salt stack',
     ingress: 'Managing multiple virtual machines is conveniently done with the vagrant',
     date: new Date('2024-11-10'),
     labels: ['salt', 'vm', 'servers'],
   },
   {
     id:3,
-    title: 'Testing Salt Commands Locally on a Virtual Machine',
+    title: 'Testing daemons on salt stack infrastructure',
     ingress: 'With Salt stack, we can build a configuration management system where we can manage large numbers of computers and the daemons running on them.',
     date: new Date('2024-11-20'),
     labels: ['salt', 'vm', 'servers'],
