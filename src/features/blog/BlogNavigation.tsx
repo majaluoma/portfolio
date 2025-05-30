@@ -10,7 +10,7 @@ import {
 import profileImage1 from '@/assets/profileImage1.jpeg';
 import LinkAccordion from '../../components/customUi/LinkAccordion';
 import { blogData } from '@/data/blogData';
-import SocialLinks from '../portfolio/SocialLinks/SocialLinks';
+import SocialLinks from '../../components/customUi/SocialLinks/SocialLinks';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 

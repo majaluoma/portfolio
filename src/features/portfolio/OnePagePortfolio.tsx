@@ -6,7 +6,7 @@ import ResumeTable from './resumeTable/ResumeTable';
 import ChapterSeparator from '../../components/customUi/ChapterSeparator/ChapterSeparator';
 import { experienceBranches } from '@/data/experienceBranches';
 import PageEnd from '../../components/customUi/ChapterSeparator/PageEnd';
-import SocialLinks from './SocialLinks/SocialLinks';
+import SocialLinks from '../../components/customUi/SocialLinks/SocialLinks';
 import KeyCompetencies from './keyCompetencies/KeyCompetencies';
 
 export default function OnePagePortfolio() {
