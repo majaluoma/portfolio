@@ -38,5 +38,10 @@ export default function Test() {
     };
   }, []);
 
-  return <div id="todistusvalinta-widget" data-asiakas="studentum" />;
+  return (
+  <div>
+    <iframe src="http://todistusvalinta.fi/apiLaskuri?asiakas=hs" frameBorder="0" scrolling="yes" width="100%" height="500px"></iframe>
+    <div id="todistusvalinta-widget" data-asiakas="studentum"/>
+  </div>
+)
 }
