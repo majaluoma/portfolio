@@ -10,4 +10,8 @@ export const titles = [
     path: '/blog',
     title: 'Blog',
   },
+   {
+    path: '/test',
+    title: 'Testisivu projekteja varten',
+  },
 ];
