@@ -62,7 +62,7 @@ export default function OnePagePortfolio() {
       <BlockView variant="white">
         <p className="text-xl">
           I'm looking for a new project or trainee position starting from august
-          2025. 👉 olli@majaluoma.fi
+          2026. 👉 yhteys@majaluoma.fi
         </p>
         <SocialLinks />
       </BlockView>
