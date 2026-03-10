@@ -72,7 +72,16 @@ export const experienceBranches = [
         description:
           'Included psychology, philosophy, educational governance, and ICT studies',
         startDate: new Date('2014-08-01'),
-        endDate: new Date('2019-05-01'), // Currently working
+        endDate: new Date('2019-05-01'),
+      },
+      {
+        name: 'Special needs education',
+        employer: 'UEF',
+        icon: uef,
+        description:
+          '25 study points of special needs education studies in open university. ',
+        startDate: new Date('2025-08-01'),
+        endDate: new Date('2026-05-01'), 
       },
     ],
   },

@@ -40,7 +40,7 @@ export default function Test() {
 
   return (
   <div>
-    <iframe src="http://todistusvalinta.fi/apiLaskuri?asiakas=hs"  scrolling="yes" width="100%" height="500"></iframe>
+    <iframe src="http://todistusvalinta.fi/apiLaskuri?asiakas=hs" width="100%" height="500"></iframe>
     <div id="todistusvalinta-widget" data-asiakas="studentum"/>
   </div>
 )
